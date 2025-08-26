@@ -1,5 +1,5 @@
 resource "aws_appautoscaling_target" "svc" {
-  service_namespace  = var.cluster_name
+  service_namespace  = "ecs"
   resource_id        = "service/${var.cluster_name}/${var.service_name}"
   scalable_dimension = "ecs:service:DesiredCount"
   min_capacity       = var.min_capacity
