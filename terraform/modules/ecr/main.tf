@@ -7,6 +7,7 @@ resource "aws_ecr_repository" "this" {
     tags = {
         Name = var.repository_name
     }
+    force_delete = true
 }
 
  # image_tag_mutability - MUTABLE = allows overwriting same tag
