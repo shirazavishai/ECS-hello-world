@@ -11,6 +11,7 @@ resource "aws_lb_target_group" "tg" {
     port     = 80
     protocol = "HTTP"
     vpc_id   = var.vpc_id # VPC ID passed as a variable
+    target_type = "ip"
     health_check {
         path                = "/"
         interval            = 30
@@ -18,6 +19,9 @@ resource "aws_lb_target_group" "tg" {
         healthy_threshold   = 2
         unhealthy_threshold = 2
         matcher             = "200-399"
+    }
+    lifecycle {
+        create_before_destroy = true
     }
 }
 
@@ -29,4 +33,6 @@ resource "aws_lb_listener" "listener" {
         type             = "forward"
         target_group_arn = aws_lb_target_group.tg.arn
     }
+
+    depends_on = [aws_lb_target_group.tg]
 }
