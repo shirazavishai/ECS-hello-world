@@ -21,11 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Configure AWS creds (OIDC or use secrets)
+      - name: Configure AWS creds
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }} # or use access keys
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }} 
 
       - name: Login to ECR
         uses: aws-actions/amazon-ecr-login@v2
