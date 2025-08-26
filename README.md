@@ -38,6 +38,6 @@ This project automates the provisioning and deployment of a containerized applic
     * For example: http://helloworld-alb-952388767.eu-west-1.elb.amazonaws.com/
 
 ### Future Enhancements
-CI/CD enhancements
-Alerting
-Cost management strategies
+* CI/CD enhancements
+* Alerting
+* Cost management strategies
