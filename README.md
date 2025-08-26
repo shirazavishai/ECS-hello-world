@@ -27,7 +27,7 @@ This project automates the provisioning and deployment of a containerized applic
     Trigger deployment by pushing code or manually running workflow.
 
 * Access the deployed application via:
-    1.  http://helloworld-alb-<lb-id>.eu-west-1.elb.amazonaws.com/
+    1.  http://helloworld-alb-[lb-id].eu-west-1.elb.amazonaws.com/
     * For example: http://helloworld-alb-952388767.eu-west-1.elb.amazonaws.com/
 
 ### Future Enhancements
