@@ -24,7 +24,14 @@ This project automates the provisioning and deployment of a containerized applic
     1. RUN: `terraform apply` to provision resources
 
 * GitActions
-    Trigger deployment by pushing code or manually running workflow.
+    1. Setting up AWS Credentials as GitHub Secrets
+        1. Go to your GitHub project repository.
+        1. Navigate to:  Settings → Secrets and Variables → Actions → New repository secret
+        1. Create the following secrets and add your AWS account credentials:
+            AWS_ACCESS_KEY_ID — Your AWS access key ID.
+            AWS_SECRET_ACCESS_KEY — Your AWS secret access key.
+        1.Save each secret after entering the respective value.
+    1. Trigger deployment by pushing code or manually running workflow.
 
 * Access the deployed application via:
     1.  http://helloworld-alb-[lb-id].eu-west-1.elb.amazonaws.com/
